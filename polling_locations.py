@@ -3,8 +3,10 @@ import requests
 import fileinput
 import json
 
+from secrets import YAHOO_APP_ID
+
 def make_url(location):
-    return 'http://where.yahooapis.com/geocode?q={0}&appid=43N1Dn7g&flags=J'.format(location)
+    return 'http://where.yahooapis.com/geocode?q={0}&appid=' + YAHOO_APP_ID + '&flags=J'.format(location)
 
 for line in fileinput.input():
     r = requests.get(make_url(line))

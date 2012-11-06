@@ -76,3 +76,4 @@ Session.vim
 *.zip
 *.txt
 *.xml
+secrets.py

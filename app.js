@@ -1,8 +1,10 @@
-var app = require('express').createServer()
+var express = require('express')
   , twitter = require('ntwitter')
   , keys = require('./secrets')
   , io = require('socket.io')
   , boundingBoxes = require('./boundingBoxes');
+
+var app = express.createServer();
 
 app.configure(function() {
   app.use(express.static(path.join(__dirname, 'public')));
@@ -33,4 +35,4 @@ twit.stream(
     });
   });
 
-app.listen(app.get('port'));
+app.listen(8000);

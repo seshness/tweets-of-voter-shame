@@ -33,7 +33,11 @@ twit.stream(
           && 'coordinates' in data.coordinates) {
         if (boundingBoxes.contained(data.coordinates.coordinates[1],
                                     data.coordinates.coordinates[1])) {
-          io.sockets.emit('new-tweet', { 'id_str': data.id_str });
+          io.sockets.emit('new-tweet', {
+            'id_str': data.id_str,
+            'text': data.text,
+            'user': data.user
+          });
           console.log(data.user.screen_name + ": " + data.text);
         }
       }

@@ -1,12 +1,20 @@
 $(function() {
+  var tweet_template = '<div class="tweet"><div class="tweet_body"></div><div class="tweet_context"></div></div></div>';
+
   var socket = io.connect('http://localhost:8000/');
   socket.on('new-tweet', function (data) {
     console.log(data);
-    var url = 'https://api.twitter.com/1/statuses/oembed.json?' +
-      $.param({id: data.id_str, align: 'center', callback: 'tweet'});
-    $.ajax(url, { dataType: 'jsonp', jsonpCallback: 'tweet' })
-      .done(function(twitter_response) {
-        console.log(twitter_response);
-      });
+    var new_tweet_node = $(tweet_template)
+      .attr('id', 'tweet-' + data.id_str);
+    new_tweet_node.find('.tweet_body')
+      .text(data.text);
+    new_tweet_node.find('.tweet_context')
+      .text(data.user.screen_name);
+
+    $('#tweets').append(new_tweet_node);
+
+    setTimeout(function() {
+      new_tweet_node.slideUp('slow');
+    }, 10000);
   });
 });

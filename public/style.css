@@ -41,19 +41,24 @@ h1 {
   padding: 20px 10px;
 }
 
-.tweet { 
+.tweet {
   background-color: #FFFFFF;
-  width: 500px;
   opacity: 1;
   border: 1px;
+  border-top: 1px dashed #333;
+  padding: 5px 0;
 }
 
-.tweet_body { 
+.tweet:first-child {
+  border-top: 1px none;
+}
+
+.tweet_body {
   font-size: 150%;
 }
 
-.tweet_context { 
-  float-right;
+.tweet_context {
+  text-align: right;
 }
 
 .left {

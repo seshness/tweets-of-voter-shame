@@ -1,7 +1,7 @@
 $(function() {
   var tweet_template = '<div class="tweet"><div class="tweet_body"></div><div class="tweet_context"></div></div></div>';
 
-  var socket = io.connect('http://localhost:8000/');
+  var socket = io.connect('/');
   socket.on('new-tweet', function (data) {
     console.log(data);
     var new_tweet_node = $(tweet_template)

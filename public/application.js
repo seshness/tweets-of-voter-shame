@@ -1,5 +1,4 @@
-var socket = io.connect('http://localhost');
-socket.on('news', function (data) {
+var socket = io.connect('http://localhost:8000/');
+socket.on('new-tweet', function (data) {
   console.log(data);
-  socket.emit('my other event', { my: 'data' });
 });

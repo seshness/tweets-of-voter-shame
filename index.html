@@ -1,0 +1,35 @@
+<html><head>
+<title>Tweets of Shame</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+</head>
+<body>
+<div class="bkg bkg_blue"></div>
+<div class="bkg bkg_red"></div>
+
+<div id="wrapper">
+<div id="content">
+<h1>Tweets of Voting Shame</h1>
+<div id="intro">You knew you shouldn't have been tweeting in your voting booth, and you did anyway, didn't you. Shame on you.</div>
+<div id="tweets">
+<div class="tweet">
+<div class="heading">
+<div class="icon"></div>
+<div class="name_info"></div>
+</div>
+<div class="blurb"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+</html>

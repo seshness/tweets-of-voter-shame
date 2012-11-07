@@ -1,0 +1,38 @@
+body { 
+  background-color: #cecece;
+  font-family: helvetica, verdana, sans-serif;
+}
+
+#content { 
+  background-color: #ffffff;
+  width: 960px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 15px;
+  opacity: 0.8;
+  filter:alpha(opacity=80);
+}
+
+h1 { 
+  text-align: center;
+}
+
+.bkg { 
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0px;
+  bottom: 0px;
+  z-index: -1;
+}
+
+.bkg_red { 
+  background-color: #910016;
+  left: 0px;
+}
+
+.bkg_blue {
+  background-color: #14617c;
+  float: right;
+  right: 0px;
+}

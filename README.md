@@ -1,4 +1,4 @@
-tweets-of-voter-shame -> Tweets celebrating the election outcome
+tweets-of-voter-shame -> Celebrating the election outcome
 ====
 
 Info 290 in-class project

@@ -44,12 +44,15 @@ h1 {
 .tweet { 
 
   background-color: #FFFFFF;
-  opacity: 1;
-  border: 1px;
-  padding-bottom: 30px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #333;
 }
 
-.tweet_body { 
+.tweet:last-child {
+  border-bottom: 1px none;
+}
+
+.tweet_body {
   font-size: 150%;
 }
 

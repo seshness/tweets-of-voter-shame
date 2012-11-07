@@ -9,7 +9,7 @@ $(function() {
     new_tweet_node.find('.tweet_body')
       .text(data.text);
     new_tweet_node.find('.tweet_context')
-      .text(data.user.screen_name);
+      .text('@' + data.user.screen_name + (data.location ? ', ' + data.location : ''));
 
     $('#tweets').append(new_tweet_node);
 

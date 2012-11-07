@@ -17,8 +17,11 @@ twit.stream(
   { 'locations': bay_area_bounding_box },
   function(stream) {
     stream.on('data', function (data) {
-      if ('latitude' in data && 'longitude' in data) {
-        if (boundingBoxes.contained(data.latitude, data.longitude)) {
+      if ('coordinates' in data
+          && data.coordinates != null
+          && 'coordinates' in data.coordinates) {
+        if (boundingBoxes.contained(data.coordinates.coordinates[1],
+                                    data.coordinates.coordinates[1])) {
           console.log(data.user.screen_name + ": " + data.text);
         }
       }

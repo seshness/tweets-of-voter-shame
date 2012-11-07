@@ -18,5 +18,4 @@ module.exports.contained = function(latitude, longitude) {
     }
   }
   var end = new Date().getTime();
-  console.timeEnd('bbox-contained');
 };

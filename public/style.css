@@ -41,7 +41,7 @@ h1 {
   padding: 20px 10px;
 }
 
-.tweet { 
+.tweet {
 
   background-color: #FFFFFF;
   padding: 10px 0;
@@ -56,9 +56,8 @@ h1 {
   font-size: 150%;
 }
 
-.tweet_context { 
+.tweet_context {
   color: #14617c;
-  float-right;
   text-align: right;
 }
 
@@ -69,5 +68,3 @@ h1 {
 #intro {
   text-align: center;
 }
-
-

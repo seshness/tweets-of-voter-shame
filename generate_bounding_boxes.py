@@ -1,5 +1,12 @@
+from __future__ import print_function
+
 import fileinput
 import math
+
+# Our usage of this script:
+#
+#  python generate_bounding_boxes.py data/ca-polling-locations-gps.csv > \
+#    data/ca-polling-locations-gps-bounding-boxes-oneline.csv
 
 ###
 # Code below from
@@ -45,11 +52,21 @@ def boundingBox(latitudeInDegrees, longitudeInDegrees, halfSideInKm):
 
     return (rad2deg(latMin), rad2deg(lonMin), rad2deg(latMax), rad2deg(lonMax))
 
-# End code copy/paste
+# End code copy/paste from stackoverflow
 ###
+
+first_line = True
 
 for line in fileinput.input():
     location = line.split(',')
-    print ','.join((str(i) for i in boundingBox(float(location[0]),
+    bbox = [str(i).strip() for i in boundingBox(float(location[0]),
                                                 float(location[1]),
-                                                0.03048))) # 100 ft in km
+                                                0.03048)] # 100 ft in kma
+    # Twitter bounding boxes are quite strange; they use (longitude, latitude)
+    bbox[0], bbox[1] = bbox[1], bbox[0]
+    bbox[2], bbox[3] = bbox[3], bbox[2]
+    if first_line:
+        first_line = False
+    else:
+        print(',', end='', sep='')
+    print(*bbox, end='', sep=',')

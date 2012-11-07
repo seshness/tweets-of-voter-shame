@@ -1,23 +1,23 @@
-body { 
+body {
   background-color: #cecece;
-  font-family: helvetica, verdana, sans-serif;
+  font-family: 'Overlock', helvetica, verdana, sans-serif;
 }
 
-#content { 
+#content {
   background-color: #ffffff;
   width: 960px;
   margin: 100px auto;
   padding: 30px;
   border-radius: 15px;
   opacity: 0.8;
-  filter:alpha(opacity=80);
+  filter: alpha(opacity=80) blur(10px);
 }
 
-h1 { 
+h1 {
   text-align: center;
 }
 
-.bkg { 
+.bkg {
   position: absolute;
   height: 100%;
   width: 50%;
@@ -26,7 +26,7 @@ h1 {
   z-index: -1;
 }
 
-.bkg_red { 
+.bkg_red {
   background-color: #910016;
   left: 0px;
 }

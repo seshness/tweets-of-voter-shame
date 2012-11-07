@@ -9,4 +9,4 @@ restaurants = json.load(open(sys.argv[1], 'rb'))
 
 for restaurant in restaurants:
     if 'latitude' in restaurant and 'longitude' in restaurant:
-        print(restaurant['latitude'], restaurant['longitude'])
+        print(restaurant['latitude'], restaurant['longitude'], sep=',')

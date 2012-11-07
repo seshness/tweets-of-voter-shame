@@ -62,7 +62,7 @@ for line in fileinput.input():
     location = line.split(',')
     bbox = [str(i).strip() for i in boundingBox(float(location[0]),
                                                 float(location[1]),
-                                                0.03048)] # 100 ft in kma
+                                                0.5)]
     if first_line:
         first_line = False
     else:

@@ -1,7 +1,7 @@
 fs = require('fs')
 
 var raw_data = fs.readFileSync(
-  'data/ca-polling-locations-gps-bounding-boxes.json',
+  'data/restaurant-gps-bounding-boxes.json',
   'utf-8'
 ).trim();
 

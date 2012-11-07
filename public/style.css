@@ -5,7 +5,7 @@ body {
 
 #content {
   background-color: #ffffff;
-  width: 960px;
+  width: 600px;
   margin: 100px auto;
   padding: 30px;
   border-radius: 15px;
@@ -42,10 +42,11 @@ h1 {
 }
 
 .tweet { 
+
   background-color: #FFFFFF;
-  width: 500px;
   opacity: 1;
   border: 1px;
+  padding-bottom: 30px;
 }
 
 .tweet_body { 
@@ -53,9 +54,17 @@ h1 {
 }
 
 .tweet_context { 
+  color: #14617c;
   float-right;
+  text-align: right;
 }
 
 .left {
   float: left;
 }
+
+#intro {
+  text-align: center;
+}
+
+

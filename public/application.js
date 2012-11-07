@@ -14,7 +14,9 @@ $(function() {
     $('#tweets').append(new_tweet_node);
 
     setTimeout(function() {
-      new_tweet_node.slideUp('slow');
-    }, 10000);
+      new_tweet_node.fadeOut(1500, function() {
+          $(this).remove();
+      });
+    }, 60000);
   });
 });

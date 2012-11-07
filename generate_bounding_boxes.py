@@ -57,16 +57,16 @@ def boundingBox(latitudeInDegrees, longitudeInDegrees, halfSideInKm):
 
 first_line = True
 
+print('[', end='', sep='')
 for line in fileinput.input():
     location = line.split(',')
     bbox = [str(i).strip() for i in boundingBox(float(location[0]),
                                                 float(location[1]),
                                                 0.03048)] # 100 ft in kma
-    # Twitter bounding boxes are quite strange; they use (longitude, latitude)
-    bbox[0], bbox[1] = bbox[1], bbox[0]
-    bbox[2], bbox[3] = bbox[3], bbox[2]
     if first_line:
         first_line = False
     else:
         print(',', end='', sep='')
-    print(*bbox, end='', sep=',')
+    print('[', end='', sep='')
+    print(*bbox, end=']', sep=',')
+print(']', sep='')

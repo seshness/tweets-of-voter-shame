@@ -1,7 +1,12 @@
-var app = require('express').createServer(),
-    twitter = require('ntwitter'),
-    keys = require('./secrets'),
-    boundingBoxes = require('./boundingBoxes');
+var app = require('express').createServer()
+  , twitter = require('ntwitter')
+  , keys = require('./secrets')
+  , io = require('socket.io')
+  , boundingBoxes = require('./boundingBoxes');
+
+app.configure(function() {
+  app.use(express.static(path.join(__dirname, 'public')));
+});
 
 var twit = new twitter({
   consumer_key: keys.CONSUMER_KEY,
@@ -28,4 +33,4 @@ twit.stream(
     });
   });
 
-app.listen(3000);
+app.listen(app.get('port'));

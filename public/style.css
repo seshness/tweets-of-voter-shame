@@ -36,3 +36,26 @@ h1 {
   float: right;
   right: 0px;
 }
+
+#tweets {
+  padding: 20px 10px;
+}
+
+.tweet { 
+  background-color: #FFFFFF;
+  width: 500px;
+  opacity: 1;
+  border: 1px;
+}
+
+.tweet_body { 
+  font-size: 150%;
+}
+
+.tweet_context { 
+  float-right;
+}
+
+.left {
+  float: left;
+}
